@@ -55,9 +55,8 @@ MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta 
 
 ## Lisans
 
-[![License: GPL](https://img.shields.io/badge/License-GPL-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
+Bu projeyi [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) altında lisansladık. Lisansın tam açıklamasını [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) sayfasında bulabilirsiniz.
 
-
-Bu projeyi [GNU Genel Kamu Lisansı (GPL)](https://www.gnu.org/licenses/gpl-3.0) altında lisansladık. Lisansın tam açıklamasını [GNU web sitesinde](https://www.gnu.org/licenses/gpl-3.0) bulabilirsiniz.
 
