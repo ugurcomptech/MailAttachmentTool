@@ -11,7 +11,7 @@ Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dos
 
 
    ```python
-   git clone https://github.com/KULLANICI_ADI/MailAttachmentTool.git
+   https://github.com/ugurcomptech/MailAttachmentTool.git
    cd MailAttachmentTool
     ```
 
@@ -50,9 +50,6 @@ Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dos
 - Projeyi çalıştırmadan önce, bilgisayarınızda projenin taramak istediğiniz klasörde uygun dosyalar olduğundan emin olunuz. E-posta gönderimi yapmadan önce alıcı e-posta adresini doğrulayınız.
 
 - Proje, Python 3 ve üzeri sürümlerinde çalışacaktır. Gerekli paketleri `requirements.txt` dosyasını kullanarak yükleyebilirsiniz.
-
-- Proje dosyalarınızı `.gitignore` dosyasına eklemeyi unutmayın. Bu sayede gereksiz dosyaların sürüm kontrolüne eklenmesi önlenir.
-
 
 
 ## Lisans
