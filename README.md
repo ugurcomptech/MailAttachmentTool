@@ -1,9 +1,8 @@
 # Mail Attachment Tool
 
 
-## GELİŞTİRME AŞAMASINDA!
+MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta adresine göndermek için kullanılan Python betiğidir.
 
-Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dosyaları e-posta ile belirtilen alıcıya gönderir. Aynı zamanda dosyaları .exe dosyasına dönüştürme yeteneğine sahiptir.
 
 ## Kurulum
 
@@ -28,7 +27,7 @@ Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dos
 1. Proje klasöründe, `MailAttach.py` dosyasını çalıştırın:
 
    ```python
-      python MailAttach.py
+   py MailAttach.py -s example@gmail.com -p example_passowrd  -r  example@gmail.com@gmail.com -d C:/Users -f png
     ```
 
 
@@ -38,10 +37,12 @@ Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dos
 - -p, --passowrd:(Sender Password): E-posta gönderenin e-posta şifresi.
 - -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
 - -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
-- -n, --file-name: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
-- -e, --file-extensions: .exe dosyasına dönüştürülecek betiğin adını girin (örn: MyAttachmentTool).
+- -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
 
 3. Gerekli bilgileri girdikten sonra, program belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
+
+4. E-posta hesabınızda "uygulama şifreleri" bölümüne gelerek bir şifre oluşturunuz ve onu kullanınız.
+
 
 ## Dikkat!
 
