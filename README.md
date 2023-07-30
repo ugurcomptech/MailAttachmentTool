@@ -38,6 +38,7 @@ MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta 
 - -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
 - -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
 - -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
+- -h, --help: Argümanlarla ilgili bilgileri görüntülemenizi sağlar.
 
 3. Gerekli bilgileri girdikten sonra, program belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
 
