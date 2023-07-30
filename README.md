@@ -1,5 +1,8 @@
 # Mail Attachment Tool
 
+
+## GELİŞTİRME AŞAMASINDA!
+
 Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dosyaları e-posta ile belirtilen alıcıya gönderir. Aynı zamanda dosyaları .exe dosyasına dönüştürme yeteneğine sahiptir.
 
 ## Kurulum
