@@ -27,7 +27,7 @@ MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta 
 1. Proje klasöründe, `MailAttach.py` dosyasını çalıştırın:
 
    ```python
-   py MailAttach.py -s example@gmail.com  -p example_passowrd  -r  example@gmail.com@gmail.com -d C:/Users -f png
+   py MailAttach.py -s example@gmail.com  -p example_passowrd  -r  example@gmail.com -d C:/Users -f png
     ```
 
 
