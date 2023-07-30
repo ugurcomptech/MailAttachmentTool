@@ -31,12 +31,12 @@ Bu Python betiği, belirli dosya uzantılarına sahip dosyaları tarar ve bu dos
 
 2. Program çalıştığında, sırasıyla aşağıdaki bilgileri girin:
 
--s, --sender-email:(Sender Email): E-posta gönderenin e-posta adresi.
--p, --passowrd:(Sender Password): E-posta gönderenin e-posta şifresi.
--r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
--d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
--n, --file-name: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
--e, --file-extensions: .exe dosyasına dönüştürülecek betiğin adını girin (örn: MyAttachmentTool).
+- -s, --sender-email:(Sender Email): E-posta gönderenin e-posta adresi.
+- -p, --passowrd:(Sender Password): E-posta gönderenin e-posta şifresi.
+- -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
+- -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
+- -n, --file-name: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
+- -e, --file-extensions: .exe dosyasına dönüştürülecek betiğin adını girin (örn: MyAttachmentTool).
 
 3. Gerekli bilgileri girdikten sonra, program belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
 
