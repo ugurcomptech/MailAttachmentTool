@@ -33,19 +33,14 @@ if __name__ == "__main__":
 
     # Argümanları işlemek için argparse nesnesi oluşturalım
     parser = argparse.ArgumentParser(description="Bilgisayarınızdaki dosyaları e-postayla gönderin.")
-    parser.add_argument("-s", "--sender-email", required=True, help="Gönderen e-posta adresi")
-    parser.add_argument("-p", "--sender-password", required=True, help="Gönderen e-posta şifresi")
-    parser.add_argument("-r", "--receiver-email", required=True, help="Alıcı e-posta adresi")
-    parser.add_argument("-d", "--folder-path", required=True, help="Taramak istediğiniz klasör yolunu belirtin")
+    parser.add_argument("-s", "--sender-email", required=True, help="E-posta gönderenin e-posta adresi.")
+    parser.add_argument("-p", "--sender-password", required=True, help="E-posta gönderenin e-posta şifresi.")
+    parser.add_argument("-r", "--receiver-email", required=True, help="Dosyaların gönderileceği alıcı e-posta adresi.")
+    parser.add_argument("-d", "--folder-path", required=True, help="Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\\my_folder).")
     parser.add_argument("-f", "--file-extensions", nargs="+", required=True,
-                        help="Taramak istediğiniz dosya uzantılarını girin (örn: -e pdf jpg png)")
+                        help="Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png)")
 
     args = parser.parse_args()
-
-    # E-posta hesap bilgilerini alalım
-    sender_email = args.sender_email
-    sender_password = args.sender_password
-    receiver_email = args.receiver_email
 
     # Belirtilen klasördeki dosyaları ve alt klasörlerdeki dosyaları tarayalım
     attachment_files = []
@@ -59,6 +54,6 @@ if __name__ == "__main__":
     # E-posta gönderme işlemlerini tamamlayalım
     for attachment_file in attachment_files:
         # E-posta gönderme işlemini çağıralım
-        send_email(sender_email, sender_password, receiver_email, subject, body, attachment_file)
+        send_email(args.sender_email, args.sender_password, args.receiver_email, subject, body, attachment_file)
 
     print("E-postalar gönderildi.")
