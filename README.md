@@ -28,7 +28,7 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
 1. Proje klasöründe, `MailAttach.py` dosyasını çalıştırın:
 
    ```python
-   py MailAttach.py -s example@gmail.com  -p example_passowrd  -r  example@gmail.com -d C:/Users -f png
+   py MailAttach.py -s example@gmail.com  -p example_passowrd  -r  example@gmail.com -d C:/Users -f png -n example
     ```
 
 
