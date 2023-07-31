@@ -14,9 +14,6 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
    https://github.com/ugurcomptech/MailAttachmentTool.git
    cd MailAttachmentTool
     ```
-![video1](https://github.com/ugurcomptech/MailAttachmentTool/assets/133202238/4ffbae81-c2e4-42f8-838d-e79561b192d3)
-
-
 
 2. Gerekli Python paketlerini yüklemek için aşağıdaki komutu çalıştırın:
 
