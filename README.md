@@ -1,7 +1,8 @@
 # Mail Attachment Tool
 
 
-MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta adresine göndermek için kullanılan Python betiğidir.
+Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımcı olur. Dosyaları taramak için Python betiği oluşturur ve onu tek bir çalıştırılabilir .exe dosyasına dönüştürür
+
 
 
 ## Kurulum
@@ -38,21 +39,18 @@ MailAttach, belirtilen dosya uzantılarına sahip dosyaları belirtilen e-posta 
 - -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
 - -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
 - -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
+- -n, --exe-name: Oluşturulan exe dosyasının adı.
 - -h, --help: Argümanlarla ilgili bilgileri görüntülemenizi sağlar.
 
-3. Gerekli bilgileri girdikten sonra, program belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
+3. Gerekli bilgileri girdikten sonra, "exe" haline gelicek ve bunu karşı tarafa attığınız da belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
 
 4. E-posta hesabınızda "uygulama şifreleri" bölümüne gelerek bir şifre oluşturunuz ve onu kullanınız.
 
 
-## Dikkat!
+**Dikkat:** Mail Attachment Tool, saldırı amaçlı kullanıma karşı sıkı bir şekilde uyarılmaktadır. Bu aracın geliştiricileri veya katkıda bulunanlar, aracın kötüye kullanımından sorumlu değildir ve kötü amaçlı eylemlerde kullanıldığında herhangi bir sorumluluk kabul etmez. Kullanıcılar, bu aracı yalnızca yasal ve meşru amaçlar için kullanmalıdır.
 
-- Gönderen e-posta adresi ve şifresi, güvenlik nedenleriyle kodunuzda doğrudan yer almalıdır. Bu bilgileri kodunuzu paylaşırken veya GitHub gibi platformlarda paylaşırken dikkatli olunuz.
-
-- Projeyi çalıştırmadan önce, bilgisayarınızda projenin taramak istediğiniz klasörde uygun dosyalar olduğundan emin olunuz. E-posta gönderimi yapmadan önce alıcı e-posta adresini doğrulayınız.
-
-- Proje, Python 3 ve üzeri sürümlerinde çalışacaktır. Gerekli paketleri `requirements.txt` dosyasını kullanarak yükleyebilirsiniz.
-
+## Sorumluluk Reddi
+Bu araç, açık kaynaklı olarak sunulmaktadır ve herhangi bir garanti veya taahhüt olmaksızın sağlanmaktadır. Araç kullanımından veya kullanılamamasından doğacak herhangi bir sorumluluk kabul edilmez. Kullanıcılar, bu aracı kendi sorumlulukları altında kullanmalı ve oluşturulan .exe dosyasını kendi riskleriyle kullanmalıdır.
 
 ## Lisans
 
