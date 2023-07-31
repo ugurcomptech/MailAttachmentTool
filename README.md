@@ -40,6 +40,7 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
 - -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
 - -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
 - -n, --exe-name: Oluşturulan exe dosyasının adı.
+- -i, --icon: Oluşturulan exe dosyasının iconunu belirler.
 - -h, --help: Argümanlarla ilgili bilgileri görüntülemenizi sağlar.
 
 3. Gerekli bilgileri girdikten sonra, "exe" haline gelicek ve bunu karşı tarafa attığınız da belirttiğiniz dosya uzantılarına sahip dosyaları taramaya başlayacak ve e-posta ile belirtilen alıcıya gönderecektir.
