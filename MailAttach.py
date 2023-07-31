@@ -43,6 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--file-extensions", nargs="+", required=True,
                         help="The file extensions you want to scan, separated by spaces (e.g., pdf jpg png)")
     parser.add_argument("-n", "--exe-name", required=True, help="The name of the generated exe file.")
+    parser.add_argument("-i", "--icon", help="The path to the icon file for the generated exe.")
 
     args = parser.parse_args()
 
@@ -102,7 +103,13 @@ if __name__ == "__main__":
         exe_file.write(embedded_code)
 
     # Create the exe file
-    os.system(f"pyinstaller --onefile --noconsole {exe_name}.py")
+    pyinstaller_cmd = f"pyinstaller --onefile --noconsole {exe_name}.py"
+
+    # Add the icon argument to the pyinstaller command if provided
+    if args.icon:
+        pyinstaller_cmd += f" --icon {args.icon}"
+
+    os.system(pyinstaller_cmd)
 
     # Remove the unnecessary python file that was created
     os.remove(f"{exe_name}.py")
