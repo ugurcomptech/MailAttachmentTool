@@ -1,0 +1,12 @@
+{
+    "sender_email": "@gmail.com",
+    "sender_password": "",
+    "receiver_email": "@gmail.com",
+    "folder_path": "C:",
+    "file_extensions": ["pdf", "txt", "png", "jpg"],
+    "exe_name": "ugur",
+    "icon": "",
+    "email_history": "email_history.json",
+    "email_subject": "",
+    "email_body": "",
+}
