@@ -35,7 +35,7 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
 
 - -s, --sender-email:(Sender Email): E-posta gönderenin e-posta adresi.
 - -p, --passowrd:(Sender Password): E-posta gönderenin e-posta şifresi.
-- -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi.
+- -r. --receiver-email: Dosyaların gönderileceği alıcı e-posta adresi(Birden fazle E-posta hesabı belirleyebilirsiniz).
 - -d, --folder-path: Dosyaların taramasını istediğiniz klasörün yolunu girin (örn: C:\my_folder).
 - -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
 - -n, --exe-name: Oluşturulan exe dosyasının adı.
