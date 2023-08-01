@@ -40,6 +40,8 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
 - -f, --file-extensions: Taramak istediğiniz dosya uzantılarını boşluklarla ayrılarak girin (örn: pdf jpg png).
 - -n, --exe-name: Oluşturulan exe dosyasının adı.
 - -i, --icon: Oluşturulan exe dosyasının iconunu belirler.
+- --email-subject: E-postanın konusunu belirler.
+- --email-body: E-postanın içerik mesajını belirler.
 - -h, --help: Argümanlarla ilgili bilgileri görüntülemenizi sağlar.
 
 
