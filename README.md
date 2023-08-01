@@ -52,6 +52,9 @@ Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımc
 4. E-posta hesabınızda "uygulama şifreleri" bölümüne gelerek bir şifre oluşturunuz ve onu kullanınız.
 
 
+**Önemli:** Birden fazla dosya türü belirttiğinizde, dosya tarama işlemi "C:/" gibi geniş alanları taradığınızda ve birden fazla e-posta adresi belirttiğinizde sistemde yavaşlama yaşanabilir. Bu nedenle, dosya tarama ve e-posta adresi belirtme işlemlerini dikkatli bir şekilde yapmanız gerekmektedir.
+
+
 **Dikkat:** Mail Attachment Tool, saldırı amaçlı kullanıma karşı sıkı bir şekilde uyarılmaktadır. Bu aracın geliştiricileri veya katkıda bulunanlar, aracın kötüye kullanımından sorumlu değildir ve kötü amaçlı eylemlerde kullanıldığında herhangi bir sorumluluk kabul etmez. Kullanıcılar, bu aracı yalnızca yasal ve meşru amaçlar için kullanmalıdır.
 
 ## Sorumluluk Reddi
