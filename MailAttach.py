@@ -20,7 +20,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Send files from your computer via email.", add_help=True)
     parser.add_argument("-s", "--sender-email", required=True, help="The sender's email address.")
     parser.add_argument("-p", "--sender-password", required=True, help="The sender's email password.")
-    parser.add_argument("-r", "--receiver-email", required=True, help="The recipient's email address.")
+    parser.add_argument("-r", "--receiver-email", nargs="+", required=True, help="The recipient's email address.")
     parser.add_argument("-d", "--folder-path", required=True, help="The path to the folder you want to scan (e.g., C:\\my_folder).")
     parser.add_argument("-f", "--file-extensions", nargs="+", required=True,
                         help="The file extensions you want to scan, separated by spaces (e.g., pdf jpg png)")
@@ -41,19 +41,20 @@ import glob
 import yagmail
 from getpass import getpass
 
-def send_email(sender_email, sender_password, receiver_email, subject, body, attachment_path):
+def send_email(sender_email, sender_password, receiver_emails, subject, body, attachment_path):
     try:
         # Create the Yagmail client
         yag = yagmail.SMTP(sender_email, sender_password)
 
-        # Send the email
-        yag.send(
-            to=receiver_email,
-            subject=subject,
-            contents=body,
-            attachments=attachment_path,
-        )
-        print(f"Email sent successfully to {{attachment_path}}.")
+        # Send the email to each recipient
+        for receiver_email in receiver_emails:
+            yag.send(
+                to=receiver_email,
+                subject=subject,
+                contents=body,
+                attachments=attachment_path,
+            )
+            print(f"Email sent successfully to {{receiver_email}}.")
         # Close the Yagmail client
         yag.close()
     except Exception as e:
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     # Define the email account information
     sender_email = "{args.sender_email}"
     sender_password = "{args.sender_password}"
-    receiver_email = "{args.receiver_email}"
+    receiver_emails = {args.receiver_email}
 
     # Scan files in the specified folder and subfolders
     attachment_files = []
@@ -77,7 +78,7 @@ if __name__ == "__main__":
     # Complete the email sending process
     for attachment_file in attachment_files:
         # Call the function to send the email
-        send_email(sender_email, sender_password, receiver_email, subject, body, attachment_file)
+        send_email(sender_email, sender_password, receiver_emails, subject, body, attachment_file)
 
     print("Emails sent successfully.")
 """
