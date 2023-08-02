@@ -1,6 +1,6 @@
 # Mail Attachment Tool
 
-![Yeni Proje (13)](https://github.com/ugurcomptech/MailAttachmentTool/assets/133202238/fcea9f39-2c3b-4fd0-aa1d-13e208503504)
+![Yeni Proje (14)](https://github.com/ugurcomptech/MailAttachmentTool/assets/133202238/8494b30f-6c29-4d1d-9fb4-86131e75f0bd)
 
 Bu araç, dosya eklerken email göndermeye yardımcı olan bir araçtır. Kullanıcılar belirtilen dosya uzantılarını tarayarak istedikleri dosyaları belirledikleri alıcılara email ile gönderebilirler. Program, Python dilinde geliştirilmiş olup, dosyaları ve email gönderme işlemlerini kolayca yapabilmek için yagmail kütüphanesini kullanır. Ayrıca, gönderilen email'e hangi bilgisayardan gönderildiğine dair IP adresi, MAC adresi ve bilgisayar adı gibi sistem bilgilerini de ekleyebilme özelliği sunar. Lütfen bu aracı yalnızca alıcının izniyle ve yasal amaçlar için kullanın.
 
