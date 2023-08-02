@@ -1,7 +1,7 @@
 # Mail Attachment Tool
 
 
-Bu proje, bilgisayarınızdaki dosyaları e-posta yoluyla göndermenize yardımcı olur. Dosyaları taramak için Python betiği oluşturur ve onu tek bir çalıştırılabilir .exe dosyasına dönüştürür
+Bu araç, dosya eklerken email göndermeye yardımcı olan bir araçtır. Kullanıcılar belirtilen dosya uzantılarını tarayarak istedikleri dosyaları belirledikleri alıcılara email ile gönderebilirler. Program, Python dilinde geliştirilmiş olup, dosyaları ve email gönderme işlemlerini kolayca yapabilmek için yagmail kütüphanesini kullanır. Ayrıca, gönderilen email'e hangi bilgisayardan gönderildiğine dair IP adresi, MAC adresi ve bilgisayar adı gibi sistem bilgilerini de ekleyebilme özelliği sunar. Lütfen bu aracı yalnızca alıcının izniyle ve yasal amaçlar için kullanın.
 
 
 
