@@ -1,5 +1,5 @@
-yagmail>=0.14.261
-requests>=2.26.1
-beautifulsoup4>=4.10.1
-pyinstaller>=5.0
-glob2==0.7
+yagmail
+requests
+beautifulsoup4
+pyinstaller
+glob2
