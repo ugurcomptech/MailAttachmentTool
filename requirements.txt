@@ -6,4 +6,4 @@ glob2
 uuid
 os-sys
 argparse
-socket
+sockets
