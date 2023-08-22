@@ -3,3 +3,7 @@ requests
 beautifulsoup4
 pyinstaller
 glob2
+uuid
+os
+argparse
+socket
