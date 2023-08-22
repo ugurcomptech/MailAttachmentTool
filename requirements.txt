@@ -4,6 +4,6 @@ beautifulsoup4
 pyinstaller
 glob2
 uuid
-os
+os-sys
 argparse
 socket
